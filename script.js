@@ -110,9 +110,35 @@ function showSuccessScreen() {
     // Create fireworks effect
     createFireworks();
 
+    // Setup WhatsApp button
+    setupWhatsAppButton();
+
     // Play celebration sound (if you want to add audio later)
     // const audio = new Audio('celebration.mp3');
     // audio.play();
+}
+
+// WhatsApp Notification Setup
+function setupWhatsAppButton() {
+    const whatsappBtn = document.getElementById('whatsappBtn');
+
+    // Your WhatsApp number (with country code, no + or spaces)
+    // Example: For India +91 1234567890, use: 911234567890
+    const yourPhoneNumber = '917037845773'; // REPLACE with your actual number!
+
+    // The message she'll send you
+    const message = encodeURIComponent(
+        '🎉 Congratulations Kiruuuu babbyyyyy!\n\n' +
+        'I said YES! ✨\n\n' +
+        'I am now officially your valentine babbyyyy! 💝\n\n' +
+        'I forgive you... and I love you! ❤️'
+    );
+
+    // Create WhatsApp link
+    const whatsappLink = `https://wa.me/${yourPhoneNumber}?text=${message}`;
+
+    whatsappBtn.href = whatsappLink;
+    whatsappBtn.target = '_blank';
 }
 
 function createFireworks() {
